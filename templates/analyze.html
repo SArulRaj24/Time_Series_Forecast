@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drug Analysis</title>
+    <link rel="stylesheet" href="../static/analysis.css">
+</head>
+<body>
+    <h2>Select Drug and Time Range</h2>
+    <form method="post">
+        <label for="drug">Drug:</label>
+        <select name="drug" id="drug">
+            {% for d in drugs %}
+            <option value="{{d}}" {% if d == selected_drug %}selected{% endif %}>{{d}}</option>
+            {% endfor %}
+        </select>
+
+        <label for="time_range">Time Range:</label>
+        <select name="time_range" id="time_range">
+            {% for r in ranges %}
+            <option value="{{r}}" {% if r == selected_range %}selected{% endif %}>{{r}}</option>
+            {% endfor %}
+        </select>
+
+        <input type="submit" value="Analyze">
+    </form>
+
+    <h2>Analysis Graph</h2>
+        {% if analysis_graph %}
+            <img src="data:image/png;base64,{{ analysis_graph }}" alt="Analysis Graph">
+        {% endif %}
+
+        <h2>Forecasting Graph</h2>
+        {% if forecast_graph %}
+            <img src="data:image/png;base64,{{ forecast_graph }}" alt="Forecasting Graph">
+        {% endif %}
+
+       <h3>Business Insights </h3>
+            <div class="insights-container">
+                <div class="insight-card">
+                    <h4>Total Sales</h4>
+                    <p>{{ summary.total_sales }}</p>
+                </div>
+                <div class="insight-card">
+                    <h4>Average Sales</h4>
+                    <p>{{ summary.avg_sales }}</p>
+                </div>
+                <div class="insight-card">
+                    <h4>Trend</h4>
+                    <p>{{ summary.trend }}</p>
+                </div>
+                <div class="insight-card">
+                    <h4>Forecast Trend</h4>
+                    <p>{{ summary.forecast_trend }}</p>
+                </div>
+            </div>
+
+    
+       
+</body>
+</html>

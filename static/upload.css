@@ -1,0 +1,65 @@
+/* upload.css */
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #eef2f7, #d9e2ec);
+    color: #2c3e50;
+    text-align: center;
+    padding: 50px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #34495e;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+}
+
+form {
+    background: #fff;
+    padding: 30px 40px;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0px 8px 18px rgba(0,0,0,0.1);
+    display: inline-block;
+}
+
+input[type="file"] {
+    margin: 15px 0;
+    padding: 10px;
+    border: 2px dashed #7f8c8d;
+    border-radius: 8px;
+    background: #fafafa;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+input[type="file"]:hover {
+    border-color: #2980b9;
+}
+
+input[type="submit"] {
+    display: block;
+    margin: 20px auto 0;
+    background: #2980b9;
+    color: white;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+input[type="submit"]:hover {
+    background: #1f6391;
+    transform: translateY(-2px);
+}
