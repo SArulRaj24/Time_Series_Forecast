@@ -94,13 +94,13 @@ def analyze():
         # Aggregate based on time range
         if selected_range == "Daily":
             grouped = df
-            steps = 5   # predict next 5 days
+            steps = 730   # predict next 1 year
         elif selected_range == "Weekly":
             grouped = df.resample("W").sum()
-            steps = 1   # predict next 1 week
+            steps = 104  # predict next 1 week
         elif selected_range == "Monthly":
             grouped = df.resample("ME").sum()
-            steps = 1   # predict next 1 month
+            steps = 12   # predict next 1 month
         else:
             grouped = df
             steps = 5

@@ -7,7 +7,7 @@ import matplotlib.animation as animation
 # ---------------------------
 # MODEL SELECTION & TRAINING
 # ---------------------------
-def run_model(y, steps=5, freq="M", model_type="sarima"):
+def run_model(y, steps=5, freq="ME", model_type="sarima"):
     """
     Run forecasting model.
     y: pandas.Series (time series data with datetime index)
